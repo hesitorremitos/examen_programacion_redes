@@ -1,12 +1,19 @@
+def invertido(num):
+    new = 0
+    while num > 10:
+        mod = num % 10
+        num = (num-mod)/10
+        new = (new + mod) * 10
+    return int(new+num)
+        
+
 def es_perfecto(num):
-    num = str(num)
-    if(num == num[::-1]):
+    if(num == invertido(num)):
         return True
     else:
         return False
+num = int(input("Digite un numero: "))
 
-num = input("Digite un numero: ")
-num = int(num)
 if(es_perfecto(num)):
     print(f"El numero {num} es perfecto")
 else:
